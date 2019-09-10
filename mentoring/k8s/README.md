@@ -60,16 +60,34 @@ minikube:
 
 ## GENERAL
 - pod:
-    > encapsaltes the containers
-- svc: 
+    > kind: Pod
+    > encapsulates one or more containers
+    > The place where the software fragment is, but POD is not a piece of container, it encapsulate one or more containers
+    > kubectl run nginx-pod --image=nginx:latest
+    > kubectl get pods
+    > kubectl describe pod POD_NAME
+    > To POD in declarative approach, Create a .yml file like in examples/examples-1/init.yml
+    > run `kubectl apply -f FILE_PATH_NAME`
+    > Delete a POD created manually `kubectl delete pod POD_NAME`
+    > Delete a POD created by declarative yml file `kubectl delete -f ./FILE_NAME`
+    > Execute a pod in iterative mode (a bash for example) 
+      - `kubectl exec -it POD_NAME -- bash`
+      - `kubectl exec -it POD_NAME --container CONTAINER_NAME -- bash`
+- svc:
+    > Service
+    > kind: Service
     > Related to a POD, allows communication to and between PODs
     > CusterIP: Internal communication
     > NodePort: External communication
     > LoadBalancer: Cloud communication
 - rs:
+    > Replica Set
+    > kind: ReplicaSet
     > encapsulates one or more PODs
     > If one of the PODs go down, it can create a new instance
 - deploy:
+    > Deploy/Deployment
+    > kind: Deployment
     > create pod via deploy is a BEST PRACTICE
     > similar to rs, but it "involves" rs. when create a deploy it auto create rs
     > It gives a version control of the rs, so you can record a config
@@ -80,69 +98,20 @@ minikube:
     > kubectl annotate deployment DEPLOY_NAME DEPLOY_CHANGE-CAUSE="message"     // set a msg
     > kubectl rollout undo deployment DEPLOY_NAME --to-revision=REVISION_NUMBER // go back to revision
 - vol:
-- hpa:
+    > Volume
+    > kind: don't have, it is defined in the POD
+    > Store data independently of the life of the POD
 - pv:
+    > Persistent Volume
+    > kind: PersistentVolume
+    > volume to persist data in the Cloud Platform
+    > arc: 
+      `DISK > PV > PVC > POD`
 - pvc:
+    > Persistent volume Claim
+    > kind: PersistentVolumeClaim
+    > a PVC access a PV
 - sc:
+    > Managers the VM disk and the volume dynamically
+- hpa:
 - quota:
-
-## POD
-
-- SImilar to the container, the pod will be the place where the softwre fragment is, but POD is not a peice of container, it encapsulate one or more containers
-- Encapsulate COntainers
-
-### Create pods manually
-
-```
-kubectl run nginx-pod --image=nginx:latest
-```
-
-### List pod
-
-```
-  kubectl get pods
-```
-
-### Describe pod
-
-```
-  kubectl describe pod POD_NAME
-```
-
-### Edit pod
-
-```
-kubectl edit pod POD_NAME
-```
-
-### Create POD in declarative approach
-
-- Create a .yml file like in examples/examples-1/init.yml
-- ru the command
-
-```
-kubectl apply -f FILE_PATH_NAME
-```
-
-### DELETE POD
-
-- Delete a POD created manually
-
-```
-kubectl delete pod POD_NAME
-```
-
-- Delete a POD created by declarative yml file
-
-```
-kubectl delete -f ./FILE_NAME
-```
-
-
-## SERVICE
-- allows communication to POD and between pods
-- A POD can have a SVC, and other pods can connect to it via CusterIP
-- Is possible config to PODs externally via NodePort
-
-## CONFIG MAP
-wayto save condifg that can be shared and reused in pods
