@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Count Down</title>
+    <style>
+      html {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .stopwatch {
+        background-color: purple;
+      }
+      .stopwatch-header {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 30px;
+        color: #4f014f;
+      }
+      .stopwatch-timer {
+        display: flex;
+        justify-content: center;
+        font-size: 150px;
+        color: #fefefefe;
+      }
+      .stopwatch-actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+      }
+      .stopwatch-actions-button {
+        margin: 10px 30px;
+        padding: 10px;
+        background-color: #fefefefe;
+        border: none;
+        color: #4f014f;
+        font-weight: bold;
+        border-radius: 3px;
+        width: 200px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      .stopwatch-actions-button:hover {
+        background-color: #ebebeb;
+      }
+    </style>
+  </head>
+  <body class="stopwatch">
+    <header class="stopwatch-header">
+      <h2>Super Counter</h2>
+    </header>
+    <section class="stopwatch-timer">
+      <span id="js-timer-count">00</span>
+    </section>
+    <section class="stopwatch-actions">
+      <button id="js-timer-start" class="stopwatch-actions-button">Plus</button>
+      <button id="js-timer-stop" class="stopwatch-actions-button">Minor</button>
+    </section>
+  </body>
+  <script src="./index.js"></script>
+  <script>
+    ///////////////
+    let counter = 0;
+
+    document
+      .querySelector("#js-timer-start")
+      .addEventListener("click", function () {
+        counter += 1;
+        document.querySelector("#js-timer-count").innerHTML = counter;
+      });
+
+    document
+      .querySelector("#js-timer-stop")
+      .addEventListener("click", function () {
+        counter -= 1;
+        document.querySelector("#js-timer-count").innerHTML = counter;
+      });
+  </script>
+</html>
