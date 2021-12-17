@@ -29,4 +29,20 @@
   > launch-wizard-NUMERO: criado ao se criar a instancia
   > launch-wizard vai controlar o acesso à instancia de nossa VM
   > se colocarmos o MEU IP, apenas nosso pc(IP) pode acessar via ssh
+    DupPoe123
+- Load Balance: 
+  > controla o acesso entre as instâncias
+- Auto scaling:
+  > cria novas intancias para garantir a alicação sempre up
+  > pode aumentar e reduzizr instancias via config
+
+Test:
+  - criar 2 intancia
+  - add um banco RDS
+  - colocar um balanceador
+  - add um auto scaling
+    - derrubar instancias e verificar q app continua no ar
+
+
+
 
