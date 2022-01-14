@@ -46,3 +46,11 @@ Test:
 
 
 
+
+
+instancias
+security groups
+imagens
+ip elastico
+rds
+auto scaling

@@ -42,3 +42,6 @@ docker run -–mount type=bind,source=/home/my-dir,target=/app nginx
 ## ERROS
 - ErrImagePull, ErrImageNeverPull and ImagePullBackoff Errors
   eval $(minikube docker-env)
+
+- Error when db connection is "in use" when UP after a down
+
