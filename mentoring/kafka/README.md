@@ -30,4 +30,12 @@
 - Rebalancing partitons:
   > MAX_POLL_RECORDS_CONFIG: force to use one partition per time before re rebalance the partitions
 
+### UPDATE store file
+- Kafka stroes data into in /tmp to update must reset the store folder
+- fisrt create 2 dir, one for kafka, other for zookeepr
+- In config/server.properties reset 'log.dirs' value with new kafka data folder path 
+- In config/zookeeper.properties reset 'dataDir' value with new zookeeper data folder path 
+
 ## Test
+
+
