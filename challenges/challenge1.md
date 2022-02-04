@@ -12,4 +12,8 @@
         ```git commit -m"meu primeiro commit"``` 
 
         ```git push origin master``` 
-    - 
+    
+        caso queira atualizar algum repositório
+        
+        ```git pull``` 
+    
