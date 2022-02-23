@@ -1,19 +1,23 @@
 # Chanllanger 1
 
- - Intalar o git na máquina;
- - Criar um repositório com o seu nome de usuário 
-    - Clonar repositório anteriro na máuina;
-    - Criar o aruqivo README.md
-    - Neste arquivo coloque seu nome
-    - fazer commit das mudanças e subir essas mudanças
+No Primeiro projeto vamos inciar o que virá a ser nosso portifólio;
 
-        ```git add README.md``` 
+## Foco 
+- Git
 
-        ```git commit -m"meu primeiro commit"``` 
+## Tarefas
+- Instalar o git na máquina;
+- Criar um repositório com o seu nome de usuário 
+- Clonar repositório anterior na máquina;
+- Criar o arquivo README.md
+    ```git add README.md``` 
+- Neste arquivo coloque seu nome
+- fazer commit das mudanças e subir essas mudanças;
 
-        ```git push origin master``` 
-    
-        caso queira atualizar algum repositório
-        
-        ```git pull``` 
+    ```git add .``` 
+
+    ```git commit -m"meu primeiro commit"``` 
+
+    ```git push origin main``` 
+
     
