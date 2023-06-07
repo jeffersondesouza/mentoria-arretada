@@ -7,3 +7,6 @@
 
 
 ### GENERAL
+- Layers: customizations done in the function. ex: installing a linux image(layer 1),installing phpexe (layer 2). Commom for customizaed runtimes
+- Events: podemos criar eventos para executar a função
+- Regras de evento: podem ser pro programação ou  
