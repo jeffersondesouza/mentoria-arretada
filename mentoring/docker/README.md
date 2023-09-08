@@ -15,6 +15,7 @@
 - In file system,the data can be found in /var/lib/docker/volumes/VOLUME_NAME/_data
 
 - TMPFS: works in Linux
+
 - tmpfs writes the data in read write layer,so,if run a new container, the data is not there,
 data lives only in the container
 - goo to store temp data
