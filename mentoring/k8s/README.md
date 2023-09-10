@@ -112,6 +112,9 @@ minikube:
     > kind: PersistentVolumeClaim
     > a PVC access a PV
 - sc:
+    > Storage Class
     > Managers the VM disk and the volume dynamically
+    > Creates the PV dynamically once a pvc is linked to a Storage Class
+    > arch: `DISK > sc > pvc >> PV`
 - hpa:
 - quota:
