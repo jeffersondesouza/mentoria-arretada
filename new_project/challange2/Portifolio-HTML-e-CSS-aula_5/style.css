@@ -1,0 +1,61 @@
+/*o que é Viewport? Permite que as PÁGINAS SE TORNEM RESPONSIVAS, ou seja, que elas se adequem ao tamanho da tela a ser exibida.*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat&family=Open+Sans:ital,wght@1,300;1,600&display=swap');
+
+
+
+.conteudo-completo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* justify-content posiciona os elementos de acordo com o requisito do desenvolvedor; space-evenly, além de distribuir
+    os elementos entre os espaços contidos, também inclui as bordas do primeiro e do último elemento no container*/
+    margin: 10%;
+
+}
+
+.conteudo-texto-completo{
+    width: 615px; /*largura*/
+    
+
+}
+.conteudo-titulo{
+    font-size: 36px;
+    font-family: 'Krona One', sans-serif;
+   
+
+}
+
+.conteudo-texto{
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.conteudo-botao-links{
+    display: flex;
+    justify-content: space-between;
+}
+.botao-link{
+    
+    background-color: #22D4FD;
+    width: 280px;
+}
+    
+*{ /* asterisco informa que este comando será aplicado em TODO O CONTEÚDO DA PÁGINA DO HTML*/
+    margin: 0;
+    padding: 0;
+}
+body{
+    box-sizing: border-box; /*força o CONTEÚDO FILHO A FICAR DENTRO/MENOR para caber dentro do conteúdo pai - é ESSENCIAL que isso aconteça*/
+    height: 100vh; /*height define a ocupação do bloco na tela (tira do padrão do navegador e, aqui, coloca em 100%*/
+    background-color: #000000;
+    color: #F6F6F6;
+}
+
+.destaque-texto-principal{
+    color: #f1a4cf;
+}
+.destaque-titulo{
+    color: #22D4FD;
+}
