@@ -57,20 +57,40 @@ minikube:
 ## POD
 - SImilar to the container, the pod will be the place where the softwre fragment is, but POD is not a peice of container, it encapsulate one or more containers 
 - Encapsulate COntainers
-- we creat pods by running 
+
+
+### Create pods manually 
 ```
 kubectl run nginx-pod --image=nginx:latest
 ```
-- List pod
+### List pod
 ```
   kubectl get pods
 ```
-- Describe pod
+### Describe pod
 ```
   kubectl describe pod POD_NAME
 ```
-- Edit pod
+### Edit pod
 ```
 kubectl edit pod POD_NAME
 ```
 
+
+### Create POD in declarative approach
+- Create a .yml file like in examples/examples-1/init.yml
+- ru the command
+```
+kubectl apply -f FILE_PATH_NAME
+```
+
+## DELETE POD
+- Delete a POD created manually
+```
+kubectl delete pod POD_NAME
+```
+- Delete a POD created by declarative yml file
+
+```
+kubectl delete -f ./FILE_NAME
+```
