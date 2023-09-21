@@ -70,6 +70,15 @@ minikube:
     > encapsulates one or more PODs
     > If one of the PODs go down, it can create a new instance
 - deploy:
+    > create pod via deploy is a BEST PRACTICE
+    > similar to rs, but it "involves" rs. when create a deploy it auto create rs
+    > It gives a version control of the rs, so you can record a config
+    > you can check the config history
+    > can go back to a past config
+    > kubectl apply -f DEPLOY_FILE_PATH --record            // execute the deploy and save it
+    > kubectl rollout history deployment DEPLOY_NAME        // gives the history of the deploy
+    > kubectl annotate deployment DEPLOY_NAME DEPLOY_CHANGE-CAUSE="message"     // set a msg
+    > kubectl rollout undo deployment DEPLOY_NAME --to-revision=REVISION_NUMBER // go back to revision
 - vol:
 - hpa:
 - pv:
