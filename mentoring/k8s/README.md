@@ -58,6 +58,22 @@ minikube:
   minikube start --vm-driver=virtualbox
   ```
 
+## GENERAL
+- pod: encapsaltes the containers
+- svc: 
+  > Related to a POD, allows communication to and between PODs
+  > CusterIP: Internal communication
+  > NodePort: External communication
+  > LoadBalancer: Cloud communication
+- rs:
+- deploy:
+- vol:
+- hpa:
+- pv:
+- pvc:
+- sc:
+- quota:
+
 ## POD
 
 - SImilar to the container, the pod will be the place where the softwre fragment is, but POD is not a peice of container, it encapsulate one or more containers
@@ -96,7 +112,7 @@ kubectl edit pod POD_NAME
 kubectl apply -f FILE_PATH_NAME
 ```
 
-## DELETE POD
+### DELETE POD
 
 - Delete a POD created manually
 
@@ -109,3 +125,12 @@ kubectl delete pod POD_NAME
 ```
 kubectl delete -f ./FILE_NAME
 ```
+
+
+## SERVICE
+- allows communication to POD and between pods
+- A POD can have a SVC, and other pods can connect to it via CusterIP
+- Is possible config to PODs externally via NodePort
+
+## CONFIG MAP
+wayto save condifg that can be shared and reused in pods
