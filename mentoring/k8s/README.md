@@ -59,13 +59,16 @@ minikube:
   ```
 
 ## GENERAL
-- pod: encapsaltes the containers
+- pod:
+    > encapsaltes the containers
 - svc: 
-  > Related to a POD, allows communication to and between PODs
-  > CusterIP: Internal communication
-  > NodePort: External communication
-  > LoadBalancer: Cloud communication
+    > Related to a POD, allows communication to and between PODs
+    > CusterIP: Internal communication
+    > NodePort: External communication
+    > LoadBalancer: Cloud communication
 - rs:
+    > encapsulates one or more PODs
+    > If one of the PODs go down, it can create a new instance
 - deploy:
 - vol:
 - hpa:
