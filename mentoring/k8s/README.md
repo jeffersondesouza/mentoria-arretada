@@ -118,3 +118,10 @@ minikube:
     > arch: `DISK > sc > pvc >> PV`
 - hpa:
 - quota:
+
+- Stateful Set
+  > Similar to the deployment
+  > Stateful Set keep the file in case the pod fails
+  > it includes the POD, but also the PVC and PV
+  > arc: `Stateful Set: pod > pvc > pv`
+
