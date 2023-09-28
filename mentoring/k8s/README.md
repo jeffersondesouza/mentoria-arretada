@@ -77,7 +77,7 @@ minikube:
     > Service
     > kind: Service
     > Related to a POD, allows communication to and between PODs
-    > CusterIP: Internal communication
+    > ClusterIP: Internal communication
     > NodePort: External communication
     > LoadBalancer: Cloud communication
 - rs:
@@ -88,8 +88,8 @@ minikube:
 - deploy:
     > Deploy/Deployment
     > kind: Deployment
+    > similar to rs, but it "involves" rs. when create a deploy it auto creates a rs
     > create pod via deploy is a BEST PRACTICE
-    > similar to rs, but it "involves" rs. when create a deploy it auto create rs
     > It gives a version control of the rs, so you can record a config
     > you can check the config history
     > can go back to a past config
@@ -97,31 +97,35 @@ minikube:
     > kubectl rollout history deployment DEPLOY_NAME        // gives the history of the deploy
     > kubectl annotate deployment DEPLOY_NAME DEPLOY_CHANGE-CAUSE="message"     // set a msg
     > kubectl rollout undo deployment DEPLOY_NAME --to-revision=REVISION_NUMBER // go back to revision
+  - Stateful Set
+    > Similar to the deployment
+    > Stateful Set keep the file in case the pod fails
+    > it includes the POD, but also the PVC and PV
+    > arc: `Stateful Set: pod > pvc > pv`
 - vol:
     > Volume
-    > kind: don't have, it is defined in the POD
+    > it is defined in the POD file as property
     > Store data independently of the life of the POD
 - pv:
     > Persistent Volume
     > kind: PersistentVolume
     > volume to persist data in the Cloud Platform
-    > arc: 
+    > architecture: 
       `DISK > PV > PVC > POD`
 - pvc:
     > Persistent volume Claim
     > kind: PersistentVolumeClaim
-    > a PVC access a PV
+    > a PVC responsible for access a PV
 - sc:
     > Storage Class
     > Managers the VM disk and the volume dynamically
     > Creates the PV dynamically once a pvc is linked to a Storage Class
     > arch: `DISK > sc > pvc >> PV`
 - hpa:
-- quota:
+    > Horizontal Pod Auto Scaler  
+    > kind: HorizontalPodAutoScaler
+    > Automatically scales the umber of Pod(in a deploy, stateful set, replica set etc) based on the CPU utilization;
+    > we need declare how much CPU must be consumed per pod
 
-- Stateful Set
-  > Similar to the deployment
-  > Stateful Set keep the file in case the pod fails
-  > it includes the POD, but also the PVC and PV
-  > arc: `Stateful Set: pod > pvc > pv`
+- quota:
 
