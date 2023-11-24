@@ -39,18 +39,16 @@ minikube:
 - Master, manager the cluster, if a pod go down it will turn it one, new commands are made to masters. Master also keep and update the State, and Receive nd execute new commands
 
 - CONTROL PLANE
-
   - API: rest api responsible for the receiving and executing commnads
   - CM (controller manager): Keep and update state
   - schedule: Define where a pod is executed
   - etcd: store all relevante data in a key value db
 
 - Nodes:
-
   - Kubelet: respnsable for execution of a teh pods inside a node
   - KubeProxy: makes the comunication between nodes of a clster
 
-- Kubectl
+- kubectl
   - Using it to send the commands to the cluster
   - to work locally need instlling the VM driver, virtual box on that case
   - Start the virtualized
